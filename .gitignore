@@ -1,1 +1,4 @@
 .vscode
+*.docx
+*.tmp
+*.pdf

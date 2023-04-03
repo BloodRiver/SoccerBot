@@ -1,8 +1,21 @@
 # SoccerBot Project
 
+<style>
+    section
+    {
+        margin-bottom: 20px;
+    }
+</style>
+
 <section>
     <h2 style="text-decoration: underline">Description</h2>
     <p>This project is an assignment for a course in my University (Independent University, Bangladesh). We are required to build a four-wheeled remote controllable car with a servo motor in front, acting as a kicking mechanism.</p>
+</section>
+
+<section>
+    <h2 style="text-decoration: underline;">Abstract</h2>
+    <p>The project aims to create a remote-controlled soccer-playing robot that  can move forward, backward, turn right, and turn left to play soccer using a remote control. The "remote controller" is an android device with an app installed which sends commands to the soccer bot via Bluetooth.
+    The entire project can be completed within 2-3 hours with some basic soldering skills and a little knowledge about Arduino Programming and Android App development using <a href="https://ai2.appinventor.mit.edu" target="_blank">MIT App inventor</a>.</p>
 </section>
 
 <section>
@@ -50,10 +63,13 @@
 
 <section>
     <h2 style="text-decoration: underline">Interface Short Description</h2>
-    <p>The interface was made using <a href="https://ai2.appinventor.mit.edu" target="_blank">MIT App inventor</a>
-    </p>
-    <p>The .aia file can be imported to a new project created in <a href="https://ai2.appinventor.mit.edu" target="_blank">MIT App inventor</a> and the interface, and the code can be viewed.
-    </p>
-    <p>Currently, the interface does not support any speed controlling system although the Arduino code does.
-    </p>
+    <p>The interface was made using MIT App inventor.<br>
+    The .aia file can be imported to a new project created in MIT App inventor and the interface, and the code can be viewed.</p>
+    <p>The features of the app are as follows:</p>
+    <ul>
+        <li>The “Connect” button is used to connect to HC-05 Bluetooth Module (Bluetooth of android device, as well as HC-05 on the soccer bot, must be turned on.)</li>
+        <li>The soccer bot is moved forward and backward using the up and down arrow buttons located on the left side of the screen.</li>
+        <li>It is turned left and right using the left and right arrow buttons located on the right side of the screen.</li>
+        <li>The L and R buttons located on the top left and right corners of the screen, are used to control the servo motor in front of the soccer bot as a kicking mechanism, to move the kicker left and right using the servo.</li>
+    </ul>
 </section>

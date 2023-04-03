@@ -14,84 +14,92 @@ int angle = 90;
 
 Servo kicker;
 
-void left_motors_forward()
+
+void move_forward()
 {
   analogWrite(ENA, motor_speed);
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
-}
-
-void left_motors_backward()
-{
-  analogWrite(ENA, motor_speed);
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
-}
-
-void right_motors_forward()
-{
   analogWrite(ENB, motor_speed);
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
 }
 
-void right_motors_backward()
+
+void move_backward()
 {
+  analogWrite(ENA, motor_speed);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
   analogWrite(ENB, motor_speed);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
 }
 
 
-void move_forward()
-{
-  left_motors_forward();
-  right_motors_forward();
-}
-
-
-void move_backward()
-{
-  left_motors_backward();
-  right_motors_backward();
-}
-
-
 void turn_left()
 {
-  left_motors_backward();
-  right_motors_forward();
+  analogWrite(ENA, motor_speed);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  analogWrite(ENB, motor_speed);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 
 void turn_right()
 {
-  right_motors_backward();
-  left_motors_forward();
+  analogWrite(ENA, motor_speed);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENB, motor_speed);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 
 void forward_left()
 {
-  right_motors_forward();
+  analogWrite(ENA, motor_speed);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENB, motor_speed);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 
 void forward_right()
 {
-  left_motors_forward();
+  analogWrite(ENA, motor_speed);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENB, motor_speed);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
 }
 
 
 void back_left()
 {
-  right_motors_backward();
+  analogWrite(ENA, motor_speed);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENB, motor_speed);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 
 void back_right()
 {
-  left_motors_backward();
+  analogWrite(ENA, motor_speed);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  analogWrite(ENB, motor_speed);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
 }
 
 
