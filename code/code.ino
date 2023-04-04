@@ -8,7 +8,7 @@
 #define IN4             4
 #define KICKER_SERVO    9
 
-int motor_speed = 255;
+int motor_speed = 160;
 int incomingByte = 0;
 int angle = 90;
 
@@ -116,7 +116,7 @@ void stop_moving()
 
 void kick_left()
 {
-  while (angle-- > 0)
+  while (angle-- > 45)
   {
     kicker.write(angle);
   }
@@ -125,7 +125,7 @@ void kick_left()
 
 void kick_right()
 {
-  while (angle++ < 180)
+  while (angle++ < 135)
   {
     kicker.write(angle);
   }
