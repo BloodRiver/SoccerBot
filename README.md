@@ -1,12 +1,5 @@
 # SoccerBot Project
 
-<style>
-    section
-    {
-        margin-bottom: 20px;
-    }
-</style>
-
 <section>
     <h2 style="text-decoration: underline">Description</h2>
     <p>This project is an assignment for a course in my University (Independent University, Bangladesh). We are required to build a four-wheeled remote controllable car with a servo motor in front, acting as a kicking mechanism.</p>
