@@ -1,12 +1,14 @@
 #include <Servo.h>
 
-#define ENA            11
-#define ENB            12
-#define IN1             8
-#define IN2             7
-#define IN3             2
-#define IN4             4
-#define KICKER_SERVO    9
+#define enA             A0
+#define enB             A1
+#define enC             A2
+#define enD             A3
+#define IN1             12
+#define IN2             11
+#define IN3             10
+#define IN4              9
+#define KICKER_SERVO    A5
 
 int motor_speed = 160;
 int incomingByte = 0;
@@ -17,65 +19,65 @@ Servo kicker;
 
 void move_forward()
 {
-  analogWrite(ENA, motor_speed);
+  analogWrite(enA, motor_speed);
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
-  analogWrite(ENB, motor_speed);
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
+  analogWrite(enB, motor_speed);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 
 void move_backward()
 {
-  analogWrite(ENA, motor_speed);
+  analogWrite(enA, motor_speed);
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
-  analogWrite(ENB, motor_speed);
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, HIGH);
+  analogWrite(enB, motor_speed);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 
 void turn_left()
 {
-  analogWrite(ENA, motor_speed);
+  analogWrite(enA, motor_speed);
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
-  analogWrite(ENB, motor_speed);
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
-}
-
-
-void turn_right()
-{
-  analogWrite(ENA, motor_speed);
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  analogWrite(ENB, motor_speed);
+  analogWrite(enB, motor_speed);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
 }
 
 
-void forward_left()
+void turn_right()
 {
-  analogWrite(ENA, motor_speed);
-  digitalWrite(IN1, LOW);
+  analogWrite(enA, motor_speed);
+  digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
-  analogWrite(ENB, motor_speed);
+  analogWrite(enB, motor_speed);
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
 }
 
 
+void forward_left()
+{
+  analogWrite(enA, motor_speed);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  analogWrite(enB, motor_speed);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+}
+
+
 void forward_right()
 {
-  analogWrite(ENA, motor_speed);
+  analogWrite(enA, motor_speed);
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
-  analogWrite(ENB, motor_speed);
+  analogWrite(enB, motor_speed);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, LOW);
 }
@@ -83,21 +85,21 @@ void forward_right()
 
 void back_left()
 {
-  analogWrite(ENA, motor_speed);
+  analogWrite(enA, motor_speed);
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, LOW);
-  analogWrite(ENB, motor_speed);
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, HIGH);
+  analogWrite(enB, motor_speed);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 
 void back_right()
 {
-  analogWrite(ENA, motor_speed);
+  analogWrite(enA, motor_speed);
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
-  analogWrite(ENB, motor_speed);
+  analogWrite(enB, motor_speed);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, LOW);
 }
@@ -105,8 +107,6 @@ void back_right()
 
 void stop_moving()
 {
-  analogWrite(ENA, 0);
-  analogWrite(ENB, 0);
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, LOW);
@@ -137,8 +137,8 @@ void setup() {
   kicker.attach(KICKER_SERVO);
   kicker.write(angle);
 
-  pinMode(ENA, OUTPUT);
-  pinMode(ENB, OUTPUT);
+  pinMode(enA, OUTPUT);
+  pinMode(enB, OUTPUT);
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
   pinMode(IN3, OUTPUT);
