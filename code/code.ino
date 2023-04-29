@@ -20,22 +20,22 @@ Servo kicker;
 void move_forward()
 {
   analogWrite(enA, motor_speed);
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
   analogWrite(enB, motor_speed);
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 
 void move_backward()
 {
   analogWrite(enA, motor_speed);
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
   analogWrite(enB, motor_speed);
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 
@@ -45,8 +45,8 @@ void turn_left()
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
   analogWrite(enB, motor_speed);
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 
@@ -56,8 +56,8 @@ void turn_right()
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   analogWrite(enB, motor_speed);
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 
@@ -67,16 +67,16 @@ void forward_left()
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, LOW);
   analogWrite(enB, motor_speed);
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 
 void forward_right()
 {
   analogWrite(enA, motor_speed);
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
   analogWrite(enB, motor_speed);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, LOW);
@@ -89,16 +89,16 @@ void back_left()
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, LOW);
   analogWrite(enB, motor_speed);
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 
 void back_right()
 {
   analogWrite(enA, motor_speed);
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
   analogWrite(enB, motor_speed);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, LOW);
@@ -151,6 +151,7 @@ void loop() {
     if (Serial.available() > 0)
     {
       incomingByte = Serial.read();
+      Serial.println(char(incomingByte));
     }
 
     switch(incomingByte)
